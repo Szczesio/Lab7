@@ -1,21 +1,42 @@
 public class Point {
-    static double x;
-    static double y;
+    final double x;
+    final double y;
 
-    static Point zero_zero = new Point (0, 0);
-    static Point one_zero = new Point(1, 0);
+    static final Point zero_zero = new Point (0, 0);
+    static final Point one_zero = new Point(1, 0);
 
-    public Point( double x, double y)
+    private Point( double x, double y)
     {
         this.x = x;
         this.y = y;
     }
 
-    public static double getX() {
+    public static Point of (double x, double y)
+    {
+        return new Point(x, y);
+    }
+
+    Point move(double vx, double vy)
+    {
+        return new Point(x + vx, y + vy);
+
+    }
+
+    Point symmetryOx()
+    {
+        return new Point(x, -y);
+    }
+
+    Point symmetryOy()
+    {
+        return new Point(-x, y);
+    }
+
+    public double getX() {
         return x;
     }
 
-    public static double getY() {
+    public double getY() {
         return y;
     }
 
