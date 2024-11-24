@@ -13,7 +13,7 @@ public class Point {
 
     public static Point of (double x, double y)
     {
-        return Point(x, y);
+        return new Point(x, y);
     }
 
     Point move(double vx, double vy)
