@@ -14,9 +14,10 @@ public class Cuboid extends Solid{
     public double surfaceArea() {
         return 2*a*b + 2*a*c + 2*b*c;
     }
-    
-    public boolean equals(Cuboid cube)
+
+    @Override
+    public boolean equals(Object cube)
     {
-        return (unitName==cube.getUnitName() && Math.abs(a-cube.a) <= dokladnoscEpsylon  && Math.abs(b - cube.b) <= dokladnoscEpsylon  && Math.abs(c-cube.c) <= dokladnoscEpsylon);
+        return (unitName==((Cuboid)cube).getUnitName() && Math.abs(a-((Cuboid)cube).a) <= dokladnoscEpsylon  && Math.abs(b - ((Cuboid)cube).b) <= dokladnoscEpsylon  && Math.abs(c-((Cuboid)cube).c) <= dokladnoscEpsylon);
     }
 }

@@ -22,9 +22,10 @@ public abstract class Solid {
         return unitName;
     }
 
-    public boolean equals(Solid solid)
+    public boolean equals(Object o)
     {
-        return unitName == solid.getUnitName();
+
+        return unitName == ((Solid) o).getUnitName();
     }
 
     public abstract double volume();
