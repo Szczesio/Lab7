@@ -1,4 +1,6 @@
 public abstract class Solid {
+
+    public double dokladnoscEpsylon = 0.1;
     private enum Unit{
         mm ("mm"),
         cm ("cm"),
@@ -13,18 +15,16 @@ public abstract class Solid {
 
     Unit unitName = Unit.mm;
 
-    public Solid(Unit unit)
-    {
-        unitName = unit;
-    }
+    public Solid(Unit unit) {unitName = unit;}
+    public Solid(){}
 
     public Unit getUnitName() {
         return unitName;
     }
 
-    public boolean equals(Solid b)
+    public boolean equals(Solid solid)
     {
-        return unitName == b.getUnitName();
+        return unitName == solid.getUnitName();
     }
 
     public abstract double volume();
